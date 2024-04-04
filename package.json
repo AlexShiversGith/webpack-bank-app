@@ -1,0 +1,16 @@
+{
+  "name": "webpack-bank-app",
+  "version": "1.0.0",
+  "description": "webpack application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "js",
+    "javascript"
+  ],
+  "author": "Alex Shivers",
+  "license": "ISC"
+}
