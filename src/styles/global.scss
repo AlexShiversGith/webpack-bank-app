@@ -1,0 +1,32 @@
+@import './variables';
+@import 'scss-reset/reset';
+
+input, button, body{
+    font-family: $font;
+}
+
+body{
+    background-color: #78087469;
+    color: $white;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+input{
+    font-size: 16px;
+    background-color: transparent;
+    color: $white;
+
+    &::placeholder{
+        color: $text-gray;
+    }
+}
+
+a{
+    color: $white;
+    text-decoration: none;
+    transition: border-color .3s ease-in-out;
+    animation: drawing .4s;
+}
+
+@import './keyframes'

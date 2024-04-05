@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimiserWebpackPlaguin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const webpack = require('webpack')
 
 //require('dotenv').config()
 
@@ -45,7 +44,7 @@ const config = {
     resolve: {
         extensions: ['.js'],
         alias: {
-            '@': path.resolve(__dirname, 'src/'),
+            "@": path.resolve(__dirname, 'src'),
         }
     },
     devtool: isProduction ? false : 'source-map',
@@ -57,6 +56,7 @@ const config = {
         compress: true,
         port: 9000,
         historyApiFallback: true,
+        hot: true,
     },
     optimization: {
         minimize: isProduction,
@@ -109,17 +109,8 @@ const config = {
                 ],
             },
             {
-                test: /^(?!\.module\).)*s[ac]ss$/i,
-                //была еще одна открывающаяся скобка
-                use: [
-                    stylesHandler, 
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                        }
-                    },
-                ],
+                test: /^((?!\module).)*s[ac]ss$/i,
+                use: [stylesHandler, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.css$/i,

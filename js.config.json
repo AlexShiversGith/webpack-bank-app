@@ -1,0 +1,9 @@
+{
+    "compilerOptions":{
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    },
+    "exclude": ["noce_modules"]
+}
